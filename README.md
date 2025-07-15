@@ -24,7 +24,11 @@ Implemented, tested, and documented S3 bucket security configurations and public
 
 This lab focused on the security lifecycle for Amazon S3 buckets. The workflow included creating both private and intentionally public buckets, applying best-practice access policies, configuring server-side encryption, simulating a misconfiguration, and detecting issues using AWS Trusted Advisor. The steps demonstrate practical skills essential for AWS cloud security roles.
 
-*A diagram of the overall process is included in the repository folder.
+---
+
+## Diagram
+
+![Lab Architecture Diagram](diagram.png)
 
 ---
 
@@ -82,32 +86,23 @@ This lab focused on the security lifecycle for Amazon S3 buckets. The workflow i
 
 ## Screenshot Explanations
 
-1. s3-bucket-list.png
-Shows both S3 buckets created for the lab.
+1. s3-bucket-list.png: Shows both S3 buckets created for the lab.
 
-2. private-bucket-policy.png
-JSON policy attached to the private bucket to enforce HTTPS access.
+2. private-bucket-policy.png: JSON policy attached to the private bucket to enforce HTTPS access.
 
-3. public-bucket-policy.png
-JSON policy attached to the public bucket, allowing public read for demonstration.
+3. public-bucket-policy.png: JSON policy attached to the public bucket, allowing public read for demonstration.
 
-4. private-bucket-encryption.png
-Confirmation that SSE-S3 encryption is enabled on the private bucket.
+4. private-bucket-encryption.png: Confirmation that SSE-S3 encryption is enabled on the private bucket.
 
-5. public-bucket-encryption.png
-Confirmation that SSE-KMS encryption is enabled on the public bucket.
+5. public-bucket-encryption.png: Confirmation that SSE-KMS encryption is enabled on the public bucket.
 
-6. private-bucket-permissions.png
-Block Public Access enabled on the private bucket (default secure setting).
+6. private-bucket-permissions.png: Block Public Access enabled on the private bucket (default secure setting).
 
-7. public-bucket-permissions.png
-Block Public Access disabled on the public bucket (misconfiguration for testing).
+7. public-bucket-permissions.png: Block Public Access disabled on the public bucket (misconfiguration for testing).
 
-8. public-bucket-file-public-access.png
-Public test file (hello.txt) successfully accessed from an incognito browser.
+8. public-bucket-file-public-access.png: Public test file (hello.txt) successfully accessed from an incognito browser.
 
-9. trusted-advisor-no-s3-check.png
-Trusted Advisor page, documenting that S3 security checks require a higher support plan.
+9. trusted-advisor-no-s3-check.png: Trusted Advisor page, documenting that S3 security checks require a higher support plan.
 
 ---
 
