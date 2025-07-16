@@ -7,6 +7,7 @@ Implemented, tested, and documented S3 bucket security configurations and public
 ## Table of Contents
 
 - [Overview]
+- [Diagram]
 - [Objectives]
 - [Steps Performed]
   - [1. S3 Bucket Creation]
