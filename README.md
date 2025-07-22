@@ -14,10 +14,11 @@ Implemented, tested, and documented S3 bucket security configurations and public
 - [Steps Performed]
   - [1. S3 Bucket Creation]
   - [2. Bucket Policy Configuration]
-  - [3. Bucket Encryption]
-  - [4. Public Access Test]
-  - [5. Misconfiguration Detection]
-  - [6. Cleanup]
+  - [3. Bucket Encryption Configuration]
+  - [4. Access Control Verification]
+  - [5. Public Access Test]
+  - [6. Misconfiguration Detection]
+  - [7. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -66,32 +67,32 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 ## Steps Performed
 
 1. S3 Bucket Creation
-   - Created two S3 buckets: 
-      - One private (sebastiansilva-private-bucket) 
-      - One intentionally public (sebastiansilva-public-bucket)
-   - Verified creation via S3 bucket list in AWS Console.
+   - Created two S3 buckets: one private (sebastiansilva-private-bucket) and one intentionally public (sebastiansilva-public-bucket).
+   - Verified both buckets were created in the AWS S3 Console (Screenshot: s3-bucket-list.png)
 
 2. Bucket Policy Configuration
-   - Private bucket: Attached a policy that denies access over HTTP, requiring HTTPS for all requests.
-   - Public bucket: Attached a policy that allows public read access (for lab/testing only).
+   - Applied a policy to the private bucket to enforce secure access (HTTPS-only. Screenshot: private-bucket-policy.png)
+   - Applied a public-read policy to the public bucket to simulate real-world misconfiguration (Screenshot: public-bucket-policy.png)
 
-3. Bucket Encryption
-   - Enabled SSE-S3 (Amazon managed keys) for the private bucket.
-   - Enabled SSE-KMS (AWS KMS customer-managed key) for the public bucket.
+3. Bucket Encryption Configuration
+   - Enabled SSE-S3 (Amazon-managed keys) on the private bucket (Screenshot: private-bucket-encryption.png)
+   - Enabled SSE-KMS (KMS-managed keys) on the public bucket (Screenshot: public-bucket-encryption.png)
 
-4. Public Access Test
+4. Access Control Verification
+   - Confirmed Block Public Access was ON for the private bucket and OFF for the public bucket (Screenshots: private-bucket-permissions.png & public-bucket-permissions.png)
+
+5. Public Access Test
    - Uploaded a test file (hello.txt) to the public bucket.
-   - Validated that the file could be accessed from an incognito browser, confirming the misconfiguration.
+   - Accessed the file from an incognito browser to verify public exposure (Screenshot: public-bucket-file-public-access.png)
 
-5. Misconfiguration Detection
-   - Attempted to use AWS Trusted Advisor to detect the public bucket.
-   - Noted that the Free Tier does not provide this check; included manual verification and documentation.
+6. Misconfiguration Detection
+   - Attempted to detect the public bucket via AWS Trusted Advisor.
+   - Documented results and noted Free Tier limitations (Screenshot: trusted-advisor-no-s3-check.png)
 
-6. Cleanup
-   - Deleted all S3 buckets and objects used in the lab.
-   - Scheduled deletion for any custom AWS KMS keys created for SSE-KMS.
-   - Verified no additional AWS resources (users, roles or services) remained active.
-   - Confirmed no lingering resources to avoid unnecessary AWS charges.
+7. Cleanup
+   - Deleted all S3 buckets and uploaded objects.
+   - Scheduled deletion for any KMS keys created.
+   - Verified no lingering AWS resources to avoid ongoing charges.
    
 ---
 
@@ -110,26 +111,6 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 | 7     | public-bucket-permissions.png        | Block Public Access OFF for public bucket           |
 | 8     | public-bucket-file-public-access.png | Successful public file access from incognito browser|
 | 9     | trusted-advisor-no-s3-check.png      | Trusted Advisor showing no S3 checks (Free Tier)    |
-
-## Screenshot Explanations
-
-1. s3-bucket-list.png: Shows both S3 buckets created for the lab.
-
-2. private-bucket-policy.png: JSON policy attached to the private bucket to enforce HTTPS access.
-
-3. public-bucket-policy.png: JSON policy attached to the public bucket, allowing public read for demonstration.
-
-4. private-bucket-encryption.png: Confirmation that SSE-S3 encryption is enabled on the private bucket.
-
-5. public-bucket-encryption.png: Confirmation that SSE-KMS encryption is enabled on the public bucket.
-
-6. private-bucket-permissions.png: Block Public Access enabled on the private bucket (default secure setting).
-
-7. public-bucket-permissions.png: Block Public Access disabled on the public bucket (misconfiguration for testing).
-
-8. public-bucket-file-public-access.png: Public test file (hello.txt) successfully accessed from an incognito browser.
-
-9. trusted-advisor-no-s3-check.png: Trusted Advisor page, documenting that S3 security checks require a higher support plan.
 
 ---
 
