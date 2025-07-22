@@ -7,6 +7,8 @@ Implemented, tested, and documented S3 bucket security configurations and public
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
@@ -14,7 +16,8 @@ Implemented, tested, and documented S3 bucket security configurations and public
   - [2. Bucket Policy Configuration]
   - [3. Bucket Encryption]
   - [4. Public Access Test]
-- [5. Misconfiguration Detection]
+  - [5. Misconfiguration Detection]
+  - [6. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -24,6 +27,23 @@ Implemented, tested, and documented S3 bucket security configurations and public
 ## Overview
 
 This lab focused on the security lifecycle for Amazon S3 buckets. The workflow included creating both private and intentionally public buckets, applying best-practice access policies, configuring server-side encryption, simulating a misconfiguration, and detecting issues using AWS Trusted Advisor. The steps demonstrate practical skills essential for AWS cloud security roles.
+
+---
+
+## Real-World Risk
+
+Misconfigured Amazon S3 buckets are one of the most common causes of large-scale data breaches in the cloud. Publicly accessible buckets can unintentionally expose sensitive data—including personal information, intellectual property or critical business documents—to the entire internet. Attackers often scan for such misconfigurations and can quickly exploit them, leading to compliance violations, reputation damage and significant financial loss. Proactively securing S3 buckets and continuously monitoring for public access is essential for any organization operating in the cloud.
+
+---
+
+## What I Built
+
+- Created both secure (private) and intentionally misconfigured (public) S3 buckets for demonstration purposes.
+- Applied JSON bucket policies to enforce or allow access as required.
+- Enabled server-side encryption using SSE-S3 and SSE-KMS.
+- Uploaded and tested public file access via incognito browser.
+- Attempted detection of public access misconfiguration using AWS Trusted Advisor and documented results.
+- Included comprehensive screenshots, sample policy JSONs and a clear architecture diagram.
 
 ---
 
@@ -67,6 +87,12 @@ This lab focused on the security lifecycle for Amazon S3 buckets. The workflow i
    - Attempted to use AWS Trusted Advisor to detect the public bucket.
    - Noted that the Free Tier does not provide this check; included manual verification and documentation.
 
+6. Cleanup
+   - Deleted all S3 buckets and objects used in the lab.
+   - Scheduled deletion for any custom AWS KMS keys created for SSE-KMS.
+   - Verified no additional AWS resources (users, roles or services) remained active.
+   - Confirmed no lingering resources to avoid unnecessary AWS charges.
+   
 ---
 
 ## Screenshots
