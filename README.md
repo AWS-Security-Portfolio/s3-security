@@ -66,30 +66,30 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 
 ## Steps Performed
 
-1. S3 Bucket Creation
-   - Created two S3 buckets: one private (sebastiansilva-private-bucket) and one intentionally public (sebastiansilva-public-bucket).
-   - Verified both buckets were created in the AWS S3 Console (Screenshot: s3-bucket-list.png)
+**1. S3 Bucket Creation**
+   - Created two S3 buckets: one private (sebastiansilva-private-bucket) and one intentionally public (sebastiansilva-public-bucket)
+   - Verified both buckets were created in the AWS S3 Console *(Screenshot: s3-bucket-list.png)*
 
-2. Bucket Policy Configuration
-   - Applied a policy to the private bucket to enforce secure access (HTTPS-only. Screenshot: private-bucket-policy.png)
-   - Applied a public-read policy to the public bucket to simulate real-world misconfiguration (Screenshot: public-bucket-policy.png)
+**2. Bucket Policy Configuration**
+   - Applied a policy to the private bucket to enforce secure access (HTTPS-only. *Screenshot: private-bucket-policy.png)*
+   - Applied a public-read policy to the public bucket to simulate real-world misconfiguration *(Screenshot: public-bucket-policy.png)*
 
-3. Bucket Encryption Configuration
-   - Enabled SSE-S3 (Amazon-managed keys) on the private bucket (Screenshot: private-bucket-encryption.png)
-   - Enabled SSE-KMS (KMS-managed keys) on the public bucket (Screenshot: public-bucket-encryption.png)
+**3. Bucket Encryption Configuration**
+   - Enabled SSE-S3 (Amazon-managed keys) on the private bucket *(Screenshot: private-bucket-encryption.png)*
+   - Enabled SSE-KMS (KMS-managed keys) on the public bucket *(Screenshot: public-bucket-encryption.png)*
 
-4. Access Control Verification
-   - Confirmed Block Public Access was ON for the private bucket and OFF for the public bucket (Screenshots: private-bucket-permissions.png & public-bucket-permissions.png)
+**4. Access Control Verification**
+   - Confirmed Block Public Access was ON for the private bucket and OFF for the public bucket *(Screenshots: private-bucket-permissions.png & public-bucket-permissions.png)*
 
-5. Public Access Test
+**5. Public Access Test**
    - Uploaded a test file (hello.txt) to the public bucket.
-   - Accessed the file from an incognito browser to verify public exposure (Screenshot: public-bucket-file-public-access.png)
+   - Accessed the file from an incognito browser to verify public exposure *(Screenshot: public-bucket-file-public-access.png)*
 
-6. Misconfiguration Detection
+**6. Misconfiguration Detection**
    - Attempted to detect the public bucket via AWS Trusted Advisor.
-   - Documented results and noted Free Tier limitations (Screenshot: trusted-advisor-no-s3-check.png)
+   - Documented results and noted Free Tier limitations *(Screenshot: trusted-advisor-no-s3-check.png)*
 
-7. Cleanup
+**7. Cleanup**
    - Deleted all S3 buckets and uploaded objects.
    - Scheduled deletion for any KMS keys created.
    - Verified no lingering AWS resources to avoid ongoing charges.
@@ -126,19 +126,18 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 ## References
 
 - AWS S3 Documentation
-  https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
+  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
 - AWS S3 Bucket Policies
-  https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html
+  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html)
 
 - AWS S3 Encryption
-  https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html
+  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html)
 
 - AWS Trusted Advisor
-  https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html
+  (https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html)
 
-Note:
-Some AWS-managed or service-linked roles cannot be deleted manually and are retained by AWS for service management. Full Trusted Advisor checks (including S3 public bucket detection) require a Business or Enterprise support plan. For this lab, public access was validated manually.
+* Note: Some AWS-managed or service-linked roles cannot be deleted manually and are retained by AWS for service management. Full Trusted Advisor checks (including S3 public bucket detection) require a Business or Enterprise support plan. For this lab, public access was validated manually.
 
 ---
 
