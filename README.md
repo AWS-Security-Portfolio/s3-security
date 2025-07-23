@@ -98,7 +98,7 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 
 ## Screenshots
 
-*All relevant screenshots demonstrating each step are included in the screenshots/ folder of this repository.
+*All screenshots are included in the screenshots/ folder of this repository.*
 
 | Order | File Name                            | What it Shows                                       |
 |-------|--------------------------------------|-----------------------------------------------------|
