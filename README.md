@@ -125,19 +125,12 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 
 ## References
 
-- AWS S3 Documentation
-  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [AWS S3 Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [AWS S3 Bucket Policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html)
+- [AWS S3 Encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html)
+- [AWS Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html)
 
-- AWS S3 Bucket Policies
-  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html)
-
-- AWS S3 Encryption
-  (https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html)
-
-- AWS Trusted Advisor
-  (https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html)
-
-* Note: Some AWS-managed or service-linked roles cannot be deleted manually and are retained by AWS for service management. Full Trusted Advisor checks (including S3 public bucket detection) require a Business or Enterprise support plan. For this lab, public access was validated manually.
+*Note:* Some AWS-managed or service-linked roles cannot be deleted manually and are retained by AWS for service management. Full Trusted Advisor checks (including S3 public bucket detection) require a Business or Enterprise support plan. For this lab, public access was validated manually.
 
 ---
 
