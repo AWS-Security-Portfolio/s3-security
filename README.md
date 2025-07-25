@@ -134,4 +134,6 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 
 ---
 
-Sebastian Silva C. – July 2025 – Berlin, Germany
+Sebastian Silva C. – July 2025 – Berlin, Germany.
+- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
+- [GitHub](https://github.com/SebaSilC)
