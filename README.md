@@ -1,17 +1,17 @@
 ## AWS S3 Security Lab
 
-Implemented, tested, and documented S3 bucket security configurations and public access detection in AWS. Covered creation, policy and encryption management, public access simulation, and misconfiguration detection using AWS Trusted Advisor.
+Implemented, tested and documented S3 bucket security configurations and public access detection in AWS. Covered creation, policy and encryption management, public access simulation, and misconfiguration detection using AWS Trusted Advisor.
 
 ---
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. S3 Bucket Creation]
   - [2. Bucket Policy Configuration]
   - [3. Bucket Encryption Configuration]
@@ -19,9 +19,9 @@ Implemented, tested, and documented S3 bucket security configurations and public
   - [5. Public Access Test]
   - [6. Misconfiguration Detection]
   - [7. Cleanup]
-- [Screenshots]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
