@@ -1,6 +1,6 @@
 ## AWS S3 Security Lab
 
-Implemented, tested and documented S3 bucket security configurations and public access detection in AWS. Covered creation, policy and encryption management, public access simulation, and misconfiguration detection using AWS Trusted Advisor.
+Implemented, tested and documented S3 bucket security configurations and public access detection in AWS. Covered creation, policy and encryption management, public access simulation and misconfiguration detection using AWS Trusted Advisor.
 
 ---
 
@@ -22,6 +22,7 @@ Implemented, tested and documented S3 bucket security configurations and public 
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [References](#references)
+- [Contact](#contact)
 
 ---
 
@@ -134,6 +135,7 @@ Misconfigured Amazon S3 buckets are one of the most common causes of large-scale
 
 ---
 
-Sebastian Silva C. – July 2025 – Berlin, Germany.
-- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
-- [GitHub](https://github.com/SebaSilC)
+## Contact
+
+Sebastian Silva C. – July, 2025 – Berlin, Germany.  
+[LinkedIn](https://www.linkedin.com/in/sebastiansilc) | [GitHub](https://github.com/SebaSilC) | [sebastian@playbookvisualarts.com](mailto:sebastian@playbookvisualarts.com)
